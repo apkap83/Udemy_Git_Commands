@@ -90,3 +90,37 @@ git restore --staged path/to/unwanted_file
     # Clear all stash
     git stash clear
 
+## Undoing Changes & Time Travelling
+
+    # We can use checkout to create branches (-b), switch to new branches, restore files,
+    # and undo history!
+
+    # After checking out a particular commit we are in detached head mode and from there we
+    # can create a new branch...
+
+    # Discarding Changes
+    # To revert a file back to whatever it looked like when you last committed
+    git checkout HEAD <filename> 
+    -OR- git restore <file-name> # --> Uses HEAD as the default source
+    git checkout -- <filename>
+
+    ## Undoing commits
+    # Suppose you've just made a couple of commits on the master branch, but you actually meant
+    # to make them on a separate branch instead.
+    git reset <commit id> -afterwards you can create a new branch with those changes- git switch -c "NewBranch"
+
+    # Undo commits AND the actual changes in current directory
+    git reset --hard <commit id>
+
+    ## Git revert is similar to git reset in that they both "undo"
+    ## changes, but they accomplish it in different ways.
+    ## git reset actually moves the branch pointer backwards, eliminating commits
+    ## git revert instead creates a brand new commit which reverses/undos the changes
+    ## from a commit. Because it results in a new commit, you will be prompted to enter
+    ## a commit message
+    git revert c958161
+
+    # If you want to reverse some commits that other people already have on their machines, you should use revert
+    # If you want to reverse commits that you haven't shared with others, use reset and no one will ever know!
+
+    
