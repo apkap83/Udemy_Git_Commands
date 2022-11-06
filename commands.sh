@@ -122,5 +122,4 @@ git restore --staged path/to/unwanted_file
 
     # If you want to reverse some commits that other people already have on their machines, you should use revert
     # If you want to reverse commits that you haven't shared with others, use reset and no one will ever know!
-
     
