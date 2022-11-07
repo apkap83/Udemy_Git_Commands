@@ -182,3 +182,15 @@ git commit -m "remove file1.txt"
     # Just like git merge, it matters WHERE we run this command from. Whatever branch we run it from
     # is where the changes will be merged into.
     git pull [<origin>] [<branch>]
+
+## Rebase
+
+    # There are two main ways to use git rebase command:
+        # - as an alternative to merging
+        # - as a cleanup tool
+    git switch feature
+    git rebase master
+
+    # Golden Rule
+    # When NOT to Rebase
+    # Never rebase commits that have been shared with others. If you have already pushed commits up to Github.. DO NOT rebase them unless you are positive no one on the team is using those commits
