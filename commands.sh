@@ -8,6 +8,12 @@ git config --global user.email "ap.kapetanios@gmail.com"
 git config user.name
 git config user.email
 
+# TLS Verification True
+git config --global http.sslVerify true
+
+# Allow git to talk to Windows's own certificate store
+git config --global http.sslBackend schannel
+
 # Set VS Code as default editor
 git config --global core.editor "code --wait"
 
@@ -17,10 +23,13 @@ git commit -a -m "Message"
 # Forgot to add something minor in the previous commit - add it in the latest commit
 git commmit --amend
 
-# Remove a file that should not be committed
-git restore --staged path/to/unwanted_file
-    #Now commit again, you can even re-use the same commit message:
-    git commit -c ORIG_HEAD  
+# If you want to remove the file from the Git repository and the filesystem, use:
+git rm file1.txt
+git commit -m "remove file1.txt"
+
+# But if you want to remove the file only from the Git repository and not remove it from the filesystem, use:
+git rm --cached file1.txt
+git commit -m "remove file1.txt"
 
 #### Branches ####
 
@@ -103,6 +112,9 @@ git restore --staged path/to/unwanted_file
     git checkout HEAD <filename> 
     -OR- git restore <file-name> # --> Uses HEAD as the default source
     git checkout -- <filename>
+
+    # Remove a file from staging area
+    git restore --staged path/to/unwanted_file
 
     ## Undoing commits
     # Suppose you've just made a couple of commits on the master branch, but you actually meant
