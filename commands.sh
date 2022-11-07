@@ -122,4 +122,51 @@ git restore --staged path/to/unwanted_file
 
     # If you want to reverse some commits that other people already have on their machines, you should use revert
     # If you want to reverse commits that you haven't shared with others, use reset and no one will ever know!
+
+## GitHub
+    # Show remote repositories config in current/local repositories
+    git remote -v
+
+    # Add remote origin
+    git remote add origin https://....
+
+    # origin is just a name that you can rename
+    git remote rename <old> <new>
+
+    # Also you can remove remote origin
+    git remote remove <name>
+
+    # Push master branch to origin
+    git push origin master
+
+    # Push a branch and rename the uploaded branch
+    git push origin pancake:waffle
+
+   # git push -u origin master --> git push (associates local/master with origin/master)  
+
+   # Show all remote branches
+   git branch -r
+
+   # Switch to a remote branch 
+   # Makes a local branch and sets it up to track the remote branch
+   git switch origin/puppies
+   
+   # Old way to do the same thing as above
+   git checkout --track origin/puppies
+
+    # Fetching allows us to download changes from a remote repository, but those changes
+    # will not be automatically integrated in our working files
+    # It lets you see what others have been working on, without having to merge those changes
+    # into your local repo.
+    git fetch [<origin>] [<branch>]
+
+
+    # Pull is another command we can use to retrieve changes from a remote repository.
+    # Unlike fetch, pull actually updates our HEAD branch with whatever changes are
+    # retrieved from the remote.
+    # "go and download data from Github AND immediately update my local repo with those changes"
+    # git pull = git fetch + git merge
     
+    # Just like git merge, it matters WHERE we run this command from. Whatever branch we run it from
+    # is where the changes will be merged into.
+    git pull [<origin>] [<branch>]
