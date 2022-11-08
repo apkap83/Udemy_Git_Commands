@@ -193,4 +193,17 @@ git commit -m "remove file1.txt"
 
     # Golden Rule
     # When NOT to Rebase
-    # Never rebase commits that have been shared with others. If you have already pushed commits up to Github.. DO NOT rebase them unless you are positive no one on the team is using those commits
+    # Never rebase commits that have been shared with others. If you have already pushed commits up to Github.. 
+    # DO NOT rebase them unless you are positive no one on the team is using those commits
+
+# Interactive Rebase
+    
+    # Running git rebase with the -i option will enter the Interactive
+    # mode, which allows to edit commits, add files, drop commits etc.
+    # Note that we need to specify how far back we want to rewrite commits.
+    # Also, notice that we are not rebasing onto another branch.
+    # Instead, we are rebasing a series of commits onto the HEAD they are
+    # currently are based on.
+    git rebase -i HEAD~4
+
+
