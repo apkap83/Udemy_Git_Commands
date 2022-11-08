@@ -206,4 +206,6 @@ git commit -m "remove file1.txt"
     # currently are based on.
     git rebase -i HEAD~4
 
+    # Undo the latest performed rebase (because you forgot that you have already pushed the code to Github)
+    git reset --hard ORIG_HEAD
 
