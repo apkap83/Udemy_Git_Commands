@@ -209,3 +209,39 @@ git commit -m "remove file1.txt"
     # Undo the latest performed rebase (because you forgot that you have already pushed the code to Github)
     git reset --hard ORIG_HEAD
 
+# Git Tags
+
+    # There are 2 types of Tags
+    # Lightweight: They are just name and label that points to a particular commit
+    # Annotated  : They store extra meta data including the author's name and email, the date, and a tagging message (like a commit message)
+
+    # Create a new Tag
+    git tag <tagname>  # It references the HEAD
+
+    # Show all Tags
+    git tag
+
+    # Filter Tags by pattern
+    git tag -l "*beta*"
+
+    # Checkout a particular tag (will go in detached head mode)
+    git checkout 15.3.1
+
+    # Check differencies between Tags
+    git diff 17.0.0 17.0.1
+
+    # Create an annotated tag
+    git tag -a 17.1.0
+
+    # Show the annotated tag
+    git show 17.1.0
+
+    # Tag previous commits
+    git tag <tagname> <commmit_hash>
+
+    # Replacing Tags (Force a tag to refer to another commit)
+    git tag 17.0.3 696e736be -f
+
+    # Deleting Tags
+    git tag -d <tagname>
+
