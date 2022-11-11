@@ -1,8 +1,11 @@
 # Git Commands
 
-# Define your name and e-mail
+# Define your name and e-mail in Global configuration
 git config --global user.name "apkap83"
 git config --global user.email "ap.kapetanios@gmail.com"
+
+# Define settings in Local configuration (.git/config)
+git config --local user.name "Tolis"
 
 # Retrieve config
 git config user.name
@@ -245,3 +248,11 @@ git commit -m "remove file1.txt"
     # Deleting Tags
     git tag -d <tagname>
 
+    # Pusing Tags
+    # By default, the git push command doesn't transfer tags to remote servers. If you have
+    # a lot of tags that you want to push up at once, you can use the --tags option to the
+    # git push command. This will transfer all of your tags to the remote server that are not
+    # already there.
+    git push --tags
+    # -OR- only 1 tag - This process is just like sharing remote branches
+    git push origin v1.5
