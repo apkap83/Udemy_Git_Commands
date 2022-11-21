@@ -11,6 +11,9 @@ git config --local user.name "Tolis"
 git config user.name
 git config user.email
 
+# Lists all of the already committed files being tracked by your git repo
+git ls-tree --full-tree -r --name-only HEAD
+
 # TLS Verification True
 git config --global http.sslVerify true
 
