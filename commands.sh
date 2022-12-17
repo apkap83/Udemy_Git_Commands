@@ -169,7 +169,7 @@ git commit -m "remove file1.txt"
    # Makes a local branch and sets it up to track the remote branch
    git switch origin/puppies
    
-   # Old way to do the same thing as above
+   # This creates a new local branch with the same name as the remote one - and directly establishes a tracking connection between the two.
    git checkout --track origin/puppies
 
     # Fetching allows us to download changes from a remote repository, but those changes
