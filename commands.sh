@@ -172,6 +172,9 @@ git commit -m "remove file1.txt"
    # This creates a new local branch with the same name as the remote one - and directly establishes a tracking connection between the two.
    git checkout --track origin/puppies
 
+    #  Set (or change) a tracking relationship for your current HEAD branch at any time:
+    git branch -u origin/dev
+
     # Fetching allows us to download changes from a remote repository, but those changes
     # will not be automatically integrated in our working files
     # It lets you see what others have been working on, without having to merge those changes
